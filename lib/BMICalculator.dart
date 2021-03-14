@@ -7,13 +7,15 @@ class BMICalculator extends StatefulWidget {
 }
 
 class _BMICalculatorState extends State<BMICalculator> {
+  String sex;
+  void setSex(String v) => setState(() => sex = v);
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(15),
       child: Column(
         children: [
-          SexSection(),
+          SexSection(setSex),
         ],
       ),
     );

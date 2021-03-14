@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SexSection extends StatelessWidget {
+  Function setSex;
+  SexSection(this.setSex);
   TextStyle textStyle = TextStyle(
     color: Colors.white,
     fontSize: 15,
@@ -19,7 +21,7 @@ class SexSection extends StatelessWidget {
               padding: EdgeInsets.fromLTRB(18, 9, 18, 18),
               color: Color.fromRGBO(29, 31, 51, 1),
               child: TextButton(
-                onPressed: () {},
+                onPressed: () => setSex('M'),
                 child: Column(
                   children: [
                     SvgPicture.asset(
@@ -47,7 +49,7 @@ class SexSection extends StatelessWidget {
               padding: EdgeInsets.fromLTRB(18, 9, 18, 18),
               color: Color.fromRGBO(29, 31, 51, 1),
               child: TextButton(
-                onPressed: () {},
+                onPressed: () => setSex('F'),
                 child: Column(
                   children: [
                     SvgPicture.asset(
