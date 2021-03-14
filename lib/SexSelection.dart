@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SexSection extends StatelessWidget {
-  Function setSex;
+  final Function setSex;
   SexSection(this.setSex);
-  TextStyle textStyle = TextStyle(
+  final TextStyle textStyle = TextStyle(
     color: Colors.white,
     fontSize: 15,
     fontWeight: FontWeight.bold,
