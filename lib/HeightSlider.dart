@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class HeightSlider extends StatelessWidget {
-  final int maxHeight = 225, minHeight = 150;
   final Function setHeight, getHeight;
-  HeightSlider(this.setHeight, this.getHeight);
+  final int maxHeight, minHeight;
+  HeightSlider(this.setHeight, this.getHeight, this.maxHeight, this.minHeight);
   @override
   Widget build(BuildContext context) {
     return Container(
