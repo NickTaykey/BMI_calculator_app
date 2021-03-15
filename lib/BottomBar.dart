@@ -7,10 +7,16 @@ class BottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(top: 16),
       child: Row(
         children: [
-          NumberSelector('WEIGHT', setWeight, getWeight),
-          NumberSelector('AGE', setAge, getAge),
+          Expanded(
+            child: NumberSelector('WEIGHT', setWeight, getWeight),
+          ),
+          SizedBox(width: 6),
+          Expanded(
+            child: NumberSelector('AGE', setAge, getAge),
+          ),
         ],
       ),
     );

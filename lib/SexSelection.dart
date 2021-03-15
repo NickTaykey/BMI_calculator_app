@@ -2,16 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SexSection extends StatelessWidget {
-  final Function setSex;
-  SexSection(this.setSex);
-  final TextStyle textStyle = TextStyle(
-    color: Colors.white,
-    fontSize: 15,
-    fontWeight: FontWeight.bold,
-    letterSpacing: 1.25,
-  );
+  final Function setSex, getSex;
+  SexSection(this.setSex, this.getSex);
   @override
   Widget build(BuildContext context) {
+    Color femaleColor = getSex() == 'F' ? Colors.white : Colors.grey;
+    Color maleColor = getSex() == 'M' ? Colors.white : Colors.grey;
     return Container(
       child: Row(
         children: [
@@ -26,7 +22,7 @@ class SexSection extends StatelessWidget {
                   children: [
                     SvgPicture.asset(
                       'icons/male.svg',
-                      color: Colors.white,
+                      color: maleColor,
                       height: 80.0,
                       width: 80.0,
                       semanticsLabel: 'Are you a male?',
@@ -35,7 +31,12 @@ class SexSection extends StatelessWidget {
                       margin: EdgeInsets.only(top: 10),
                       child: Text(
                         'MALE',
-                        style: textStyle,
+                        style: TextStyle(
+                          color: maleColor,
+                          fontSize: 15.5,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 1.25,
+                        ),
                       ),
                     ),
                   ],
@@ -54,7 +55,7 @@ class SexSection extends StatelessWidget {
                   children: [
                     SvgPicture.asset(
                       'icons/female.svg',
-                      color: Colors.white,
+                      color: femaleColor,
                       height: 80.0,
                       width: 80.0,
                       semanticsLabel: 'Are you a female?',
@@ -63,7 +64,12 @@ class SexSection extends StatelessWidget {
                       margin: EdgeInsets.only(top: 10),
                       child: Text(
                         'FEMALE',
-                        style: textStyle,
+                        style: TextStyle(
+                          color: femaleColor,
+                          fontSize: 15.5,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 1.25,
+                        ),
                       ),
                     ),
                   ],

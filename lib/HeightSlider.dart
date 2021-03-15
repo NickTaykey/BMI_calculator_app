@@ -18,7 +18,7 @@ class HeightSlider extends StatelessWidget {
               style: TextStyle(
                 color: Colors.grey,
                 fontWeight: FontWeight.bold,
-                fontSize: 18,
+                fontSize: 15.5,
               ),
             ),
           ),

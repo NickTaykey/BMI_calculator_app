@@ -17,9 +17,10 @@ class _BMICalculatorState extends State<BMICalculator> {
       minHeight = 150;
 
   int height = 150, age = 16, weight = 45;
-  String sex;
+  String sex = 'M';
 
   void setSex(String v) => setState(() => sex = v);
+  String getSex() => sex;
 
   void setHeight(int v) => setState(() => height = v);
   int getHeight() => height;
@@ -50,7 +51,7 @@ class _BMICalculatorState extends State<BMICalculator> {
       margin: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
       child: Column(
         children: [
-          SexSection(setSex),
+          SexSection(setSex, getSex),
           HeightSlider(setHeight, getHeight, maxHeight, minHeight),
           BottomBar(getAge, getWeight, updateAge, updateWeight),
         ],
