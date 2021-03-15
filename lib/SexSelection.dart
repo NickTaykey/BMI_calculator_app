@@ -17,7 +17,7 @@ class SexSection extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
-              margin: EdgeInsets.fromLTRB(15, 15, 3, 15),
+              margin: EdgeInsets.fromLTRB(0, 15, 3, 15),
               padding: EdgeInsets.fromLTRB(18, 9, 18, 18),
               color: Color.fromRGBO(29, 31, 51, 1),
               child: TextButton(
@@ -45,7 +45,7 @@ class SexSection extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              margin: EdgeInsets.fromLTRB(3, 15, 15, 15),
+              margin: EdgeInsets.fromLTRB(3, 15, 0, 15),
               padding: EdgeInsets.fromLTRB(18, 9, 18, 18),
               color: Color.fromRGBO(29, 31, 51, 1),
               child: TextButton(

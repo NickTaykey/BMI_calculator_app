@@ -8,18 +8,17 @@ class BMICalculator extends StatefulWidget {
 }
 
 class _BMICalculatorState extends State<BMICalculator> {
-  double height = 1.5;
+  int height = 150;
   String sex;
   void setSex(String v) => setState(() => sex = v);
-  void setHeight(double v) => setState(() => height = v);
-  double getHeight() => height;
+  void setHeight(int v) => setState(() => height = v);
+  int getHeight() => height;
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(15),
+      margin: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
       child: Column(
         children: [
-          Text('$height'),
           SexSection(setSex),
           HeightSlider(setHeight, getHeight),
         ],
