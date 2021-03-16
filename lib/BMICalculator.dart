@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'SexSelection.dart';
 import 'HeightSlider.dart';
 import 'BottomBar.dart';
+import 'CalculateBtn.dart';
 
 class BMICalculator extends StatefulWidget {
   @override
@@ -54,6 +55,9 @@ class _BMICalculatorState extends State<BMICalculator> {
           SexSection(setSex, getSex),
           HeightSlider(setHeight, getHeight, maxHeight, minHeight),
           BottomBar(getAge, getWeight, updateAge, updateWeight),
+          Expanded(
+            child: CalculateBtn(),
+          )
         ],
       ),
     );
