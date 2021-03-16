@@ -3,6 +3,8 @@ import 'SexSelection.dart';
 import 'HeightSlider.dart';
 import 'BottomBar.dart';
 import 'CalculateBtn.dart';
+import 'BMIResults.dart';
+import 'dart:math';
 
 class BMICalculator extends StatefulWidget {
   @override
@@ -16,7 +18,7 @@ class _BMICalculatorState extends State<BMICalculator> {
       minWeight = 45,
       maxHeight = 225,
       minHeight = 150;
-
+  double bmiValue;
   int height = 150, age = 16, weight = 45;
   String sex = 'M';
 
@@ -46,20 +48,31 @@ class _BMICalculatorState extends State<BMICalculator> {
     }
   }
 
+  double calculateBMI() {
+    double value = (weight / pow((height / 100), 2));
+    return double.parse(value.toStringAsFixed(2));
+  }
+
+  void onSubmit() {
+    setState(() {
+      bmiValue = calculateBMI();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-      child: Column(
-        children: [
-          SexSection(setSex, getSex),
-          HeightSlider(setHeight, getHeight, maxHeight, minHeight),
-          BottomBar(getAge, getWeight, updateAge, updateWeight),
-          Expanded(
-            child: CalculateBtn(),
-          )
-        ],
-      ),
+      child: bmiValue == null
+          ? Column(children: [
+              SexSection(setSex, getSex),
+              HeightSlider(setHeight, getHeight, maxHeight, minHeight),
+              BottomBar(getAge, getWeight, updateAge, updateWeight),
+              Expanded(
+                child: CalculateBtn(onSubmit),
+              )
+            ])
+          : BMIResults(bmiValue),
     );
   }
 }
