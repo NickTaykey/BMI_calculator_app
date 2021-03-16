@@ -8,6 +8,7 @@ class HeightSlider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.fromLTRB(0, 5, 0, 12),
+      margin: EdgeInsets.only(top: 8.5),
       color: Color.fromRGBO(17, 20, 40, 1),
       child: Column(
         children: [
