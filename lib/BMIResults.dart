@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class BMIResults extends StatelessWidget {
   final double bmiValue;
-  BMIResults(this.bmiValue);
+  final Map category;
+  BMIResults(this.bmiValue, this.category);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,11 +27,11 @@ class BMIResults extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  'NORMAL',
+                  category['status'].toUpperCase(),
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
-                    color: Colors.greenAccent[400],
+                    color: category['color'],
                   ),
                 ),
                 Container(
@@ -40,6 +41,47 @@ class BMIResults extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 85,
                       fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 12),
+                  child: Column(
+                    children: [
+                      Text(
+                        '${category['status']} BMI range:',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 19,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.grey,
+                          height: 1.6,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        category['range'],
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                          height: 1.6,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 12),
+                  child: Text(
+                    category['description'],
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      height: 1.6,
                     ),
                   ),
                 )
