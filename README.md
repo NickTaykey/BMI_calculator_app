@@ -10,10 +10,10 @@ My personal BMI calculator app
 
 ### Inputs
 
-![Screen1](https://res.cloudinary.com/dmxuerbxv/image/upload/v1616014920/various/Simulator_Screen_Shot_-_iPhone_12_mini_-_2021-03-17_at_21.56.06_pyicgq.png | width=400)
+![Screen1](https://res.cloudinary.com/dmxuerbxv/image/upload/c_scale,w_300/v1616014920/various/Simulator_Screen_Shot_-_iPhone_12_mini_-_2021-03-17_at_21.56.06_pyicgq.png)
 
 ## Screen 2
 
 ### Results
 
-![Screen2](https://res.cloudinary.com/dmxuerbxv/image/upload/v1616014920/various/Simulator_Screen_Shot_-_iPhone_12_mini_-_2021-03-17_at_21.57.49_m0lmtf.png | width=400)
+![Screen2](https://res.cloudinary.com/dmxuerbxv/image/upload/c_scale,w_300/v1616014920/various/Simulator_Screen_Shot_-_iPhone_12_mini_-_2021-03-17_at_21.57.49_m0lmtf.png)
