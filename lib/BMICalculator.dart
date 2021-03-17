@@ -109,6 +109,17 @@ class _BMICalculatorState extends State<BMICalculator> {
     });
   }
 
+  void onReset() {
+    setState(() {
+      sex = 'M';
+      height = 150;
+      age = 16;
+      weight = 45;
+      bmiValue = null;
+      category = null;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -124,7 +135,7 @@ class _BMICalculatorState extends State<BMICalculator> {
                 )
               ],
             )
-          : BMIResults(bmiValue, category),
+          : BMIResults(bmiValue, category, onReset),
     );
   }
 }

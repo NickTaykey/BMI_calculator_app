@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class BMIResults extends StatelessWidget {
   final double bmiValue;
   final Map category;
-  BMIResults(this.bmiValue, this.category);
+  final Function onReset;
+  BMIResults(this.bmiValue, this.category, this.onReset);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -84,6 +85,17 @@ class BMIResults extends StatelessWidget {
                       height: 1.6,
                     ),
                   ),
+                ),
+                SizedBox(
+                  height: 16,
+                ),
+                ElevatedButton(
+                  onPressed: onReset,
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.all(25),
+                    primary: Color.fromRGBO(8, 12, 32, 1),
+                  ),
+                  child: Text('RE-CALCULATE YOUR BMI'),
                 )
               ],
             ),
